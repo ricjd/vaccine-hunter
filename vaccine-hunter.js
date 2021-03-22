@@ -29,6 +29,8 @@ cron.schedule('*/15 * * * *', function () {
     if (res.length) {
       console.log(res);
       exec('sh scripts/alert.sh');
+    } else {
+      console.log('none found :(')
     }
   })
 })
