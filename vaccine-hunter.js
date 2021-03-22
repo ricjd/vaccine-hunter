@@ -1,10 +1,6 @@
-const cron = require('node-cron')
-const express = require('express')
-const util = require('util')
-const exec = util.promisify(require('child_process').exec)
-
-// Setup important stuff
-const app = express()
+const cron = require('node-cron');
+const util = require('util');
+const exec = util.promisify(require('child_process').exec);
 
 const hunt = async () => {
   try {
@@ -37,5 +33,4 @@ cron.schedule('*/15 * * * *', function () {
   })
 })
 
-app.listen(process.env.PORT)
-console.log(`Vaccine hunter has started on port ${process.env.PORT}`)
+console.log('Vaccine hunter has started');
